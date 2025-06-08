@@ -17,9 +17,8 @@ fetch("petnames.txt")
         pets.forEach((petName, index) => {
             const a = document.createElement("a");
             // ☺ switch blank url to commented url
-            // ☻ toggle
             a.href = "";
-//            a.href = `https://www.neopets.com/process_changepet.phtml?new_active_pet=${petName}`;
+            // a.href = `https://www.neopets.com/process_changepet.phtml?new_active_pet=${petName}`;
             a.target = "_blank";
             a.rel = "noreferrer";
 
@@ -37,7 +36,7 @@ fetch("petnames.txt")
             a.appendChild(figure);
             petGrid.appendChild(a);
 
-            // 👇 Add click listener to sync the "Next Pet" button
+            // Add click listener to sync the "Next Pet" button
             a.addEventListener("click", () => {
                 currentIndex = (index + 1) % pets.length;
                 const nextName = pets[currentIndex];
@@ -67,7 +66,8 @@ cycleBtn.addEventListener("click", () => {
 
     // Open the pet URL in a new tab
     window.open(
-        `https://www.neopets.com/process_changepet.phtml?new_active_pet=${petName}`,
+        "about:blank",
+        // `https://www.neopets.com/process_changepet.phtml?new_active_pet=${petName}`,
         "_blank",
         "noreferrer"
     );
