@@ -88,23 +88,27 @@ img {
     }
 
     .container {
-        padding: 0px 20px;
+        padding: 0px 15px;
+        margin: 10px;
     }
 
     h1 {
         font-size: 1.8rem;
     }
-
     button {
         width: 100%;
         padding: 12px;
         font-size: 1.1rem;
     }
+    .switch-pet-grid {
+        font-size: 12px;
+        line-height: 0;
+    }
 }
 
 .switch-pet-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 20px;
+    max-width:fit-content;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5% 1%;
 }
