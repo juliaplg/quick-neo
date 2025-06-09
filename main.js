@@ -38,9 +38,7 @@ fetch("petnames.txt")
         // Populate the grid
         pets.forEach((petName, index) => {
             const a = document.createElement("a");
-            // ☺ switch blank url to commented url
-            a.href = "";
-            // a.href = `https://www.neopets.com/process_changepet.phtml?new_active_pet=${petName}`;
+            a.href = `https://www.neopets.com/process_changepet.phtml?new_active_pet=${petName}`;
             a.target = "_blank";
             a.rel = "noreferrer";
 
@@ -88,8 +86,7 @@ cycleBtn.addEventListener("click", () => {
 
     // Open the pet URL in a new tab
     window.open(
-        "about:blank",
-        // `https://www.neopets.com/process_changepet.phtml?new_active_pet=${petName}`,
+        `https://www.neopets.com/process_changepet.phtml?new_active_pet=${petName}`,
         "_blank",
         "noreferrer"
     );
