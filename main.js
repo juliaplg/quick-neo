@@ -1,3 +1,25 @@
+// Load banner.html into #banner element
+function loadBanner() {
+    const bannerContainer = document.getElementById("banner");
+    if (!bannerContainer) return;
+
+    fetch("banner.html")
+        .then((res) => res.text())
+        .then((html) => {
+            bannerContainer.innerHTML = html;
+        })
+        .catch((err) => {
+            console.error("Failed to load banner:", err);
+        });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadBanner();
+
+    // ... your other init code ...
+});
+
+
 const petGrid = document.querySelector(".switch-pet-grid");
 const cycleBtn = document.getElementById("cycle-pet-btn");
 
