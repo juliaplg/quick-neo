@@ -1,8 +1,11 @@
 :root.dark-theme {
-    --bg: #000;
-    --h1: #C00;
-    --h2: #C00;
-    --text: #FFF8;
+    --bg: #1a1023;
+    --h1: #ff69b4;
+    /* hot pink */
+    --h2: #ff9eea;
+    /* light pink */
+    --text: #ffe6f7cc;
+    /* soft light pink with transparency */
 }
 
 /* Reset */
@@ -18,26 +21,31 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    padding: 0px;
+    padding: 0;
+    background-image: radial-gradient(at top left, rgba(255, 192, 203, 0.05), transparent 70%);
 }
 
 /* Container */
 .container {
     max-width: 900px;
     margin: 15px auto;
-    background-color: #FFF2;
+    background-color: rgba(255, 182, 193, 0.08);
+    /* light pink transparent */
     padding: 0 30px 15px 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
     border-radius: 20px;
 }
 
 /* Headings */
-h1{
+h1 {
     color: var(--h1);
+    text-shadow: 1px 1px 2px #000;
 }
-h2{
-    color: var(--h2)
+
+h2 {
+    color: var(--h2);
 }
+
 h3 {
     color: var(--text);
 }
@@ -49,28 +57,31 @@ p {
 
 /* Links */
 a {
-    color: #007BFF;
+    color: #ff99cc;
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #ffc1e3;
 }
 
 /* Buttons */
 button {
-    background-color: #007BFF;
+    background: linear-gradient(to right, #ff80bf, #e087e8);
     color: white;
     border: none;
     padding: 10px 16px;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 128, 191, 0.3);
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to right, #ff66aa, #c76ce6);
 }
 
 /* Images */
@@ -78,13 +89,19 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+figure {
+    text-align: center;
+    background-color:#000;
+    border-radius: 15px;
 }
 
 /* Responsive Typography */
 @media (max-width: 600px) {
     body {
-        padding: 0px;
+        padding: 0;
     }
 
     .container {
@@ -95,20 +112,111 @@ img {
     h1 {
         font-size: 1.8rem;
     }
+
     button {
         width: 100%;
         padding: 12px;
         font-size: 1.1rem;
     }
     .switch-pet-grid {
-        font-size: 12px;
-        line-height: 0;
+        font-size: 14px;
+        /* line-height: 0; */
     }
 }
 
+/* Custom grid */
 .switch-pet-grid {
     display: grid;
-    max-width:fit-content;
+    max-width: fit-content;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5% 1%;
+    gap: 1rem 1%;
+}
+
+/* Optional: subtle background sparkle */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at bottom right, rgba(255, 182, 193, 0.05), transparent 70%);
+}
+
+/* Banner */
+.banner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    margin-bottom: 15px;
+    border-radius: 16px;
+    background: linear-gradient(to right, #2a112f, #431742);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+    color: var(--text);
+    position: relative;
+}
+
+/* Optional sparkle background */
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: radial-gradient(circle at top left, rgba(255, 182, 193, 0.04), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure content is above ::before */
+.banner>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Headline */
+.banner h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--h1);
+    text-shadow: 1px 1px 2px #000;
+    white-space: nowrap;
+}
+
+/* Navigation */
+.banner nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.banner nav a {
+    color: #ffc1e3;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.banner nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-shadow: 0 0 3px #ff99cc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .banner {
+        grid-template-columns: auto 1fr;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 0.15rem 1rem;
+    }
+
+    .banner h1 {
+        font-size: 1rem;
+    }
 }

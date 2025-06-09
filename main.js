@@ -45,7 +45,9 @@ fetch("petnames.txt")
             const figure = document.createElement("figure");
 
             const img = document.createElement("img");
-            img.src = `https://pets.neopets.com/cpn/${petName}/1/7.png`;
+            img.src = "placeholder.png";
+            img.dataset.actualSrc = `https://pets.neopets.com/cpn/${petName}/1/7.png`;
+            img.classList.add("delayed-load");            
             img.alt = petName;
 
             const caption = document.createElement("figcaption");
@@ -63,6 +65,13 @@ fetch("petnames.txt")
                 cycleBtn.textContent = `Switch to ${nextName}`;
             });
         });
+        setTimeout(() => {
+            document.querySelectorAll("img.delayed-load").forEach(img => {
+                img.src = img.dataset.actualSrc;
+                img.classList.remove("delayed-load");
+            });
+        }, 500); // Adjust delay as needed
+        
         
 
         // Initialize button text if pets exist
