@@ -16,7 +16,6 @@ function loadBanner() {
 document.addEventListener("DOMContentLoaded", () => {
     loadBanner();
 
-    // ... your other init code ...
 });
 
 
@@ -70,7 +69,7 @@ fetch("petnames.txt")
                 img.src = img.dataset.actualSrc;
                 img.classList.remove("delayed-load");
             });
-        }, 500); // Adjust delay as needed
+        }, 200); // Adjust delay as needed
         
         
 
