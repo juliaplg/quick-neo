@@ -98,6 +98,17 @@ figure {
     border-radius: 15px;
 }
 
+p img {
+    display: inline;
+    height: 1.5rem;
+}
+
+h3 img{
+    display: inline;
+    height: 2rem;
+    padding-right: .5rem;
+}
+
 /* Responsive Typography */
 @media (max-width: 600px) {
     body {
@@ -130,6 +141,33 @@ figure {
     max-width: fit-content;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem 1%;
+}
+
+.simple-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: fit-content;
+    gap: 1rem 1%
+}
+
+.simple-grid img{
+    width: 50cqw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.simple-grid figure{
+    background-color: #fff0;
+}
+
+.simple-inline {
+    display: inline;
+}
+.simple-inline img{
+    height: 1.5rem;
+    display: inline;
+}
+.simple-inline a{
+    padding-right: 1rem;
 }
 
 /* Optional: subtle background sparkle */
@@ -218,5 +256,9 @@ body::before {
 
     .banner h1 {
         font-size: 1rem;
+    }
+
+    .simple-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
