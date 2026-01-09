@@ -100,8 +100,3 @@ cycleBtn.addEventListener("click", () => {
     );
     
 });
-
-function openTwoLinks(url1,url2) {
-    window.open(url1, '_blank', "noreferrer");
-    window.open(url2, '_blank', "noreferrer").focus();
-}
