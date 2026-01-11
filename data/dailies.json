@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Trudy's Surprise",
+        "image": "res/icons/dailies/Trudy_Ticket.png",
+        "url": "https://www.neopets.com/trudys_surprise.phtml"
+    },
+    {
+        "name": "Jellyneo Dailies",
+        "image": "res/mascot_400.png",
+        "url": "https://www.jellyneo.net/?go=dailies"
+    }
+]

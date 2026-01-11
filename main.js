@@ -26,7 +26,7 @@ let pets = [];
 let currentIndex = 0;
 
 // Fetch pet names from the text file
-fetch("petnames.txt")
+fetch("data/petnames.txt")
     .then(response => response.text())
     .then(text => {
         pets = text
@@ -44,7 +44,7 @@ fetch("petnames.txt")
             const figure = document.createElement("figure");
 
             const img = document.createElement("img");
-            img.src = "placeholder.png";
+            img.src = "res/placeholder.png";
             img.dataset.actualSrc = `https://pets.neopets.com/cpn/${petName}/1/7.png`;
             img.classList.add("delayed-load");            
             img.alt = petName;
@@ -100,3 +100,29 @@ cycleBtn.addEventListener("click", () => {
     );
     
 });
+
+
+fetch("data/dailies.json")
+    .then(response => response.json())
+    .then(dailies => {
+        const grid = document.getElementById("grid");
+
+        dailies.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "grid-item";
+
+            card.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <p>${item.name}</p>
+      `;
+
+            card.addEventListener("click", () => {
+                window.open(item.url, "_blank");
+            });
+
+            grid.appendChild(card);
+        });
+    })
+    .catch(error => {
+        console.error("Error loading JSON:", error);
+    });
