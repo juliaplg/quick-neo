@@ -8,5 +8,15 @@
         "name": "Jellyneo Dailies",
         "image": "res/mascot_400.png",
         "url": "https://www.jellyneo.net/?go=dailies"
+    },
+    {
+        "name": "Training School",
+        "image": "https://images.neopets.com/island/judo5.gif",
+        "url": "https://www.neopets.com/island/training.phtml?type=status"
+    },
+    {
+        "name":"Codestones",
+        "image":"https://images.neopets.com/items/codestone1.gif",
+        "url":"https://www.neopets.com/safetydeposit.phtml?obj_name=&category=2"
     }
 ]
